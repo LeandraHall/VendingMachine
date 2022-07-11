@@ -1,0 +1,61 @@
+Leandra Hall 4/17/2022 SCIS-123-01
+
+Vending Machine Algorithm
+
+This algorithm aims to create avending machine simulation program in C++ that sells drinks and snacks, 
+calculates a customer’s total, dispenses change from payments, and manages the machine’s inventory. 
+
+1. Set up code (example include statements (fstream or I/O), using namespace, etc)
+2. Create two functions int Main() and a function for change (include a function prototype if necessary)
+3. Within int Main function, declare variables to manage information such as the number of rows and columns
+4. Create two string arrays to function as parallel arrays with one being a nested array which stores the Vending
+information from the file and the other to store "Row (number)" for output.
+5. Declare a variable for file reading and open the file
+6. Create a for loop that reads each line of the file and stores it into the array that stores the vending machine information
+7. Create a user prompt that asks if user wants to use the vending machine which triggers the vending machine while loop to run
+8. Create a while loop that runs as long as the user wants to that prints out the vending machine in a 5x5 table (with row numbers
+and column letters) with three other loops within that run the other vending machihne tasks.
+10. Should ask user to select what they want to do at vending machine
+(1 for purchases, 2 to withdraw deposited money, and 3 to replenish items)
+11. The first while loop handles the purchases - will activate if user selects 1
+    - Should prompt user to select item based on row number and column letter
+    - Should prompt user to confirm selected and display its price
+        - it should also allow user to re-enter row number and column letter if it is not the item wanted
+    - Should then prompt user to input money to purchase item
+        - input the amount of dollars, quarters, dimes, and nickels that will be stored in designated variables
+        - these values will be inputted into a change function that will dispense proper change if necessary
+        - The number of item purchased should be deducted by one
+    - Should confirm purchase and ask if user wants to purchase another item
+        - if yes, the loop continues
+        - if no, the loop should break and re-enter main loop which should reprint the 5x5 table again ask user to select
+        what they want to do at the vending machine
+12. The second while loop handles withdrawing deposited money - will activate if user selects 2
+    - Prompts user to enter how much money was originally deposited
+        - Will then ask user to split amount into dollars, quarters, dimes, and nickels
+    - Values will be inputted into the change function which will withdraw the amount requested from the vending machine
+13. The third while loop hands restocking inventory - will activiate if user selects 3
+    - Prints out the name of each item along with the amount in a table
+    - Prompts user if they want to replenish an item
+        - if yes
+            - User will be asked to select the item by row number
+            - User will be asked to input the amount they want to add to the item amount
+            - The value will be updated and the new value will be printed to confirm change
+            - User will be asked again if they want to replenish an item
+                - if yes the loop continues
+                - if no, user will be asked if they want to continue using the vending machine
+                    - if yes, the user should re-enter the main while loop
+                    - if no, the program ends
+        = if no
+            - user will be asked if they want to continue using the vending machine
+                - if yes, the user should re-enter the main while loop
+                - if no, the program ends
+14. The change function
+    - Should prompt user if change needs to be calculated or money should be withdrawn
+        - if change is chosen
+            - The money the user inputs should be added to money in the vending machine based on respective (example
+            dollar with dollar etc)
+            - The different amounts will be added to make a total amount of money
+            - if the amount of money is the same as the price then user will be told there was no change and that
+            there purchase is complete
+            - if the total money is greater than the price then the price is deducted from the total money
+                - will then inform user that the purchase is complete and return the necessary change.
